@@ -1,0 +1,1 @@
+# kotlin-aws-iot-core-mqtt-app
