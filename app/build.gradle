@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -38,6 +40,11 @@ dependencies {
     implementation("software.amazon.awssdk.iotdevicesdk:aws-iot-device-sdk:1.9.3") {
         exclude group: "software.amazon.awssdk.crt"
     }
+
+    // hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0")
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
