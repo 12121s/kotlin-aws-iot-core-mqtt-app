@@ -1,6 +1,5 @@
 package com.illis.awsiotcoremqtt.domain.usecase
 
-import android.content.SharedPreferences
 import dagger.hilt.android.qualifiers.ApplicationContext
 import software.amazon.awssdk.crt.mqtt.MqttClientConnection
 import software.amazon.awssdk.crt.mqtt.MqttMessage

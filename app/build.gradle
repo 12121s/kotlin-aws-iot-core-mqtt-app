@@ -34,6 +34,8 @@ android {
 }
 
 dependencies {
+    def coroutine_version = "1.5.2"
+    def lifecycle_version = "2.4.1"
 
     /* mqtt */
     implementation 'software.amazon.awssdk.crt:aws-crt-android:0.16.14'
@@ -41,10 +43,27 @@ dependencies {
         exclude group: "software.amazon.awssdk.crt"
     }
 
+    /* coroutine */
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Annotation processor
+    //kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
     // hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
     kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0")
+
+    // logger
+    implementation 'com.orhanobut:logger:2.2.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
