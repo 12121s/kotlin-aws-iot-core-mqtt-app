@@ -1,13 +1,11 @@
 package com.illis.awsiotcoremqtt.domain.usecase
 
-import dagger.hilt.android.qualifiers.ApplicationContext
 import software.amazon.awssdk.crt.mqtt.MqttClientConnection
 import software.amazon.awssdk.crt.mqtt.MqttMessage
 import software.amazon.awssdk.crt.mqtt.QualityOfService
 import java.util.concurrent.CompletableFuture
 
-class PublishMqttUseCase(val context: ApplicationContext,
-                         private val mqttClient: MqttClientConnection) {
+class PublishMqttUseCase(private val mqttClient: MqttClientConnection) {
 
     enum class MqttType(
         val typeName: String

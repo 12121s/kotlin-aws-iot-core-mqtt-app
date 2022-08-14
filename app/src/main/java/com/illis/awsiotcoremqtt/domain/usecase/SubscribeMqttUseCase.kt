@@ -6,8 +6,7 @@ import software.amazon.awssdk.crt.mqtt.QualityOfService
 import java.nio.charset.StandardCharsets
 import java.util.concurrent.CompletableFuture
 
-class SubscribeMqttUseCase(val context: ApplicationContext,
-                           private val mqttClient: MqttClientConnection) {
+class SubscribeMqttUseCase(private val mqttClient: MqttClientConnection) {
 
     fun subscribeTVCommon() : CompletableFuture<String> {
         val future = CompletableFuture<String>()
