@@ -22,7 +22,7 @@ class MqttViewModel(
 ) : AndroidViewModel(app) {
     val mqttStatus : MutableLiveData<MqttState> = MutableLiveData()
 
-    private fun publish(msg : String, type: PublishMqttUseCase.MqttType, delay: Int) = viewModelScope.launch(Dispatchers.IO) {
+    fun publish(msg : String, type: PublishMqttUseCase.MqttType, delay: Int) = viewModelScope.launch(Dispatchers.IO) {
         publishMqttUseCase.publish(msg, type, delay).get()
         subscribe()
     }
