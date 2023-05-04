@@ -8,14 +8,14 @@ import com.illis.awsiotcoremqtt.domain.usecase.SubscribeMqttUseCase
 
 class MqttViewModelFactory(
     private val app: Application,
-    private val subscribeMqttUseCase: SubscribeMqttUseCase,
-    private val publishMqttUseCase: PublishMqttUseCase
+    /*private val subscribeMqttUseCase: SubscribeMqttUseCase,
+    private val publishMqttUseCase: PublishMqttUseCase*/
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return MqttViewModel(
-            app,
-            subscribeMqttUseCase,
-            publishMqttUseCase
+            app
+            /*subscribeMqttUseCase,
+            publishMqttUseCase*/
         ) as T
     }
 }

@@ -16,14 +16,14 @@ class FactoryModule {
     @Singleton
     @Provides
     fun provideMqttViewModelFactory(
-        application: Application,
-        subscribeMqttUseCase: SubscribeMqttUseCase,
-        publishMqttUseCase: PublishMqttUseCase
+        application: Application
+        /*subscribeMqttUseCase: SubscribeMqttUseCase,
+        publishMqttUseCase: PublishMqttUseCase*/
     ): MqttViewModelFactory {
         return MqttViewModelFactory(
-            application,
-            subscribeMqttUseCase,
-            publishMqttUseCase
+            application
+            /*subscribeMqttUseCase,
+            publishMqttUseCase*/
         )
     }
 }
